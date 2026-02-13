@@ -1,14 +1,14 @@
 {
   "containerDefinitions": [
     {
-      "name": "chap02-container",
+      "name": "chap02-container-owl",
       "image": "851725437767.dkr.ecr.ap-northeast-2.amazonaws.com/chap02-aws-deploy:latest",
-      "cpu": 256,
+      "cpu": 512,
       "memory": 307,
       "memoryReservation": 205,
       "portMappings": [
         {
-          "name": "chap02-container-8080-tcp",
+          "name": "chap02-container-owl-8080-tcp",
           "containerPort": 8080,
           "hostPort": 80,
           "protocol": "tcp",
@@ -27,7 +27,7 @@
         },
         {
           "name": "AWS_S3_BUCKET",
-          "value": "menu-images-2024-ohgi"
+          "value": "menu-images-2026-ohgi"
         },
         {
           "name": "SPRING_PROFILES_ACTIVE",
@@ -53,7 +53,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/chap02-task-definition",
+          "awslogs-group": "/ecs/chap02-task-definition-owl",
           "awslogs-create-group": "true",
           "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "ecs"
@@ -73,7 +73,7 @@
       "systemControls": []
     }
   ],
-  "family": "chap02-task-definition",
+  "family": "chap02-task-definition-owl",
   "executionRoleArn": "arn:aws:iam::851725437767:role/ecsTaskExecutionRole",
   "networkMode": "bridge",
   "volumes": [],
@@ -84,7 +84,7 @@
   "requiresCompatibilities": [
     "EC2"
   ],
-  "cpu": "256",
+  "cpu": "512",
   "memory": "512",
   "runtimePlatform": {
     "cpuArchitecture": "X86_64",
